@@ -1,5 +1,5 @@
 ## Fate Dices
-LICENSE of Fate: ```https://www.faterpg.com/licensing/?from=fate-srd```
+## LICENSE of Fate: ```https://www.faterpg.com/licensing/?from=fate-srd```
 
 ### How to start locally
 - Run `yarn install` to install dependencies.
@@ -17,7 +17,6 @@ LICENSE of Fate: ```https://www.faterpg.com/licensing/?from=fate-srd```
 
 ### About the app
 This app is a simple Miro extension for private rolling Fate dices.
-
 
 Built using [`create-miro-app`](https://www.npmjs.com/package/create-miro-app).
 This app uses [Vite](https://vitejs.dev/). \
