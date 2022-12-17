@@ -2,7 +2,7 @@
   "name": "fate-dices",
   "version": "1.0.0",
   "license": "MIT",
-  "author": "Marta Zażlak",
+  "author": "Marta Zażlak (NdV66)",
   "scripts": {
     "start": "vite",
     "build": "vite build",
