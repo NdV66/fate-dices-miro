@@ -1,7 +1,7 @@
 {
   "name": "fate-dices",
   "version": "1.0.0",
-  "license": "MIT",
+  "license": "see license.txt",
   "author": "Marta Zażlak (NdV66)",
   "scripts": {
     "start": "vite",
