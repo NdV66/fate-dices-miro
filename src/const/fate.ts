@@ -7,6 +7,7 @@ export const FATE = {
 
     TRANSLATE_FOR_MINUS: [1, 2],
     TRANSLATE_FOR_NEUTRAL: [3, 4],
+    TRANSLATE_FOR_PLUS: [5, 6],
 
     MIN: 1,
     MAX: 6,

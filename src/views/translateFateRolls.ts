@@ -1,7 +1,7 @@
 import { FATE } from '../const';
 import { FateDicesType } from '../types';
 
-const translate = (roll: number) => {
+const translateToFateChar = (roll: number) => {
     if (roll === FATE.MINUS) {
         return FATE.TEXTS.MINUS;
     } else if (roll === FATE.PLUS) {
@@ -10,4 +10,4 @@ const translate = (roll: number) => {
     return FATE.TEXTS.NEUTRAL;
 };
 
-export const translateFateRolls = (rolls: FateDicesType) => rolls.map(translate);
+export const translateFateRolls = (rolls: FateDicesType) => rolls.map(translateToFateChar);
