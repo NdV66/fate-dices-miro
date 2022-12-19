@@ -5,12 +5,12 @@ on:
     branches: [ dev, main ]
 
 jobs:
-  tests:
+  build:
     runs-on: ubuntu-latest
 
     strategy:
       matrix:
-        node-version: [15.x, 16.x]
+        node-version: [14, 16]
 
     steps:
       - uses: actions/checkout@v3
@@ -20,6 +20,6 @@ jobs:
         with:
           node-version: ${{ matrix.node-version }}
 
-      - name: "Run tests..."
-      - run: npm ci
-      - run: npm test
+      - run: yarn install
+      - run: yarn build
+      - run: yarn test
