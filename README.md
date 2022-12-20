@@ -15,7 +15,6 @@ This app uses [Vite](https://vitejs.dev/).
 ![Screen app](./assets/screen3.jpg) \
 ![Screen app](./assets/screen4.jpg)
 
-
 ### How to start locally
 - Run `yarn install` to install dependencies.
 - Run `yarn start` to start developing. \
