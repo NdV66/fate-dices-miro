@@ -1,6 +1,6 @@
 import { FATE } from '../../const';
 import { rollFateDices, translateToFate } from '../../services';
-import * as tools from '../../services/tools';
+import * as tools from '../../services/rolls';
 
 describe('translateToFate', () => {
     const testCase = (rolls: number[], expectedNumber: number) => {

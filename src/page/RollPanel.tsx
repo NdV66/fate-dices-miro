@@ -3,7 +3,7 @@ import { TEXTS } from '../const';
 import { Toggle } from '../elements/Toggle';
 import { Result } from '../parts';
 import { rollFateDices } from '../services';
-import { calcSummaryRolls } from '../services/tools';
+import { calcSummaryRolls } from '../services';
 import { translateFateRolls } from '../views/translateFateRolls';
 import { RollPanelButtons } from './RollPanelButtons';
 import { RollPanelModificationInput } from './RollPanelModificationInput';
@@ -15,14 +15,19 @@ export const RollPanel: React.FC = () => {
     const [result, setResult] = React.useState(0);
     const [showInput, setShowInput] = React.useState(false);
 
-    const onClickCleanButton = () => {
+    const cleanInput = () => {
         setValue('');
         setErrorMessage('');
+    };
+
+    const onClickCleanButton = () => {
+        cleanInput();
         setDisplayRolls(null);
     };
 
     const onClickButton = async () => {
         const rolls = rollFateDices();
+
         const summary = calcSummaryRolls(rolls, value);
         const displayRolls = translateFateRolls(rolls);
 
@@ -30,7 +35,10 @@ export const RollPanel: React.FC = () => {
         setResult(summary);
     };
 
-    const onChangeModificationToggle = () => setShowInput(!showInput);
+    const onChangeModificationToggle = () => {
+        setShowInput(!showInput);
+        cleanInput();
+    };
 
     return (
         <>

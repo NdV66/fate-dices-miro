@@ -1,6 +1,7 @@
 import * as React from 'react';
 import { FATE, TEXTS } from '../const';
-import { ModificationInput, testIfModIsOk } from '../parts';
+import { ModificationInput } from '../parts';
+import { testIfModIsOk } from '../services';
 
 type Props = {
     setValue: (value: string) => void;
@@ -13,11 +14,10 @@ export const RollPanelModificationInput: React.FC<Props> = ({ setValue, errorMes
     const resetErrorMessage = () => setErrorMessage('');
 
     const onChangeInput = (value: string) => {
+        const isOkValue = testIfModIsOk(value);
         setValue(value);
 
-        if (!value) {
-            resetErrorMessage();
-        } else if (testIfModIsOk(value)) {
+        if (!value || isOkValue) {
             resetErrorMessage();
         } else {
             setErrorMessage(TEXTS.MODIFICATION_ERROR);

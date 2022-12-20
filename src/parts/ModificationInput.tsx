@@ -7,10 +7,6 @@ type Props = Pick<InputProps, 'error' | 'statusText' | 'success' | 'id' | 'value
     showLabel?: boolean;
 };
 
-const REGEXP = /(\+|\-){0,1}\d+/g;
-
-export const testIfModIsOk = (value: string) => REGEXP.test(value);
-
 export const ModificationInput: React.FC<Props> = ({ onChange, showLabel, ...props }) => {
     const onChangeInput = (event: React.FormEvent<HTMLInputElement>) => onChange(event.currentTarget.value);
 
