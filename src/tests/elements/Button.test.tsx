@@ -1,4 +1,4 @@
-import { render } from '@testing-library/react';
+import { fireEvent, render } from '@testing-library/react';
 import '@testing-library/jest-dom';
 import { Button, ButtonProps } from '../../elements/Button';
 
@@ -16,24 +16,66 @@ describe('Button', () => {
     });
 
     describe('Primary', () => {
-        test('Should render primary button', async () => {
+        const renderElement = () => {
             const { getByText } = render(<Button.Primary {...props} />);
-            const result = getByText(TEXT);
+            return getByText(TEXT);
+        };
+
+        test('Should render primary button', () => {
+            const result = renderElement();
 
             expect(result).toHaveClass('button');
             expect(result).toHaveClass('button-small');
             expect(result).toHaveClass('button-primary');
         });
+
+        test('Should call onClick()', async () => {
+            const result = renderElement();
+
+            await fireEvent.click(result);
+            expect(props.onClick).toBeCalled();
+        });
+
+        test('Should be disabled', async () => {
+            const { getByText } = render(<Button.Primary {...props} disabled />);
+            const result = getByText(TEXT);
+
+            await fireEvent.click(result);
+
+            expect(result).toBeDisabled();
+            expect(props.onClick).not.toBeCalled();
+        });
     });
 
     describe('Secondary', () => {
-        test('Should render secondary button', async () => {
+        const renderElement = () => {
             const { getByText } = render(<Button.Secondary {...props} />);
-            const result = getByText(TEXT);
+            return getByText(TEXT);
+        };
+
+        test('Should render secondary button', () => {
+            const result = renderElement();
 
             expect(result).toHaveClass('button');
             expect(result).toHaveClass('button-small');
             expect(result).toHaveClass('button-secondary');
+        });
+
+        test('Should call onClick()', async () => {
+            const result = renderElement();
+
+            await fireEvent.click(result);
+            expect(props.onClick).toBeCalled();
+        });
+
+        test('Should be disabled', async () => {
+            const { getByText } = render(<Button.Secondary {...props} disabled />);
+            const result = getByText(TEXT);
+
+            await fireEvent.click(result);
+
+            expect(result).toBeDisabled();
+            expect(props.onClick).not.toBeCalled();
         });
     });
 });
