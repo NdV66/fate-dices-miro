@@ -1,13 +1,12 @@
-import { RollButton } from '../elements';
-import { CleanButton } from '../parts/CleanButton';
+import { CleanButton, RollButton } from '../parts';
 
-type Props = {
+export type RollPanelButtonsProps = {
     onClickCleanButton: () => void;
     onClickButton: () => void;
     disabled: boolean;
 };
 
-export const RollPanelButtons: React.FC<Props> = ({ onClickCleanButton, onClickButton, disabled }) => (
+export const RollPanelButtons: React.FC<RollPanelButtonsProps> = ({ onClickCleanButton, onClickButton, disabled }) => (
     <div className="grid app-buttons">
         <div className="cs1 ce3">
             <CleanButton onClick={onClickCleanButton} />

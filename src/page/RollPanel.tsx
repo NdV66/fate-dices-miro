@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { TEXTS } from '../const';
+import { FATE, TEXTS } from '../const';
 import { Toggle } from '../elements/Toggle';
 import { Result } from '../parts';
 import { rollFateDices } from '../services';
@@ -50,6 +50,7 @@ export const RollPanel: React.FC = () => {
                     setErrorMessage={setErrorMessage}
                     errorMessage={errorMessage}
                     value={value}
+                    defaultStatusText={FATE.TEXTS.MODIFICATION_STATUS}
                 />
             )}
 

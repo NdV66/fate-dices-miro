@@ -1,5 +1,5 @@
 export const TEXTS = {
-    MAIN_BUTTON: 'Roll',
+    ROLL_BUTTON: 'Roll',
     CLEAN_BUTTON: 'Clean',
 
     TOGGLE_MODIFICATION_LABEL: 'Show modification input',

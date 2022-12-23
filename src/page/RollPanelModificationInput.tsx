@@ -1,16 +1,24 @@
 import * as React from 'react';
-import { FATE, TEXTS } from '../const';
+import { TEXTS } from '../const';
 import { ModificationInput } from '../parts';
 import { testIfModIsOk } from '../services';
 
-type Props = {
+export type RollPanelModificationInputProps = {
     setValue: (value: string) => void;
     errorMessage: string;
     setErrorMessage: (value: string) => void;
     value: string;
+
+    defaultStatusText?: string;
 };
 
-export const RollPanelModificationInput: React.FC<Props> = ({ setValue, errorMessage, setErrorMessage, value }) => {
+export const RollPanelModificationInput: React.FC<RollPanelModificationInputProps> = ({
+    setValue,
+    errorMessage,
+    setErrorMessage,
+    value,
+    defaultStatusText,
+}) => {
     const resetErrorMessage = () => setErrorMessage('');
 
     const onChangeInput = (value: string) => {
@@ -28,7 +36,7 @@ export const RollPanelModificationInput: React.FC<Props> = ({ setValue, errorMes
         <ModificationInput
             onChange={onChangeInput}
             error={!!errorMessage}
-            statusText={errorMessage || FATE.TEXTS.MODIFICATION_STATUS}
+            statusText={errorMessage || defaultStatusText}
             id="modification"
             showLabel={false}
             value={value}

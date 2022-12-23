@@ -15,7 +15,7 @@ describe('RollButton', () => {
 
     const renderElement = () => {
         const { getByText } = render(<RollButton {...props} />);
-        return getByText(TEXTS.MAIN_BUTTON);
+        return getByText(TEXTS.ROLL_BUTTON);
     };
 
     test('Should render (with correct text)', async () => {
@@ -32,7 +32,7 @@ describe('RollButton', () => {
 
     test('Should be disabled (onClick is not called)', async () => {
         const { getByText } = render(<RollButton {...props} disabled />);
-        const result = getByText(TEXTS.MAIN_BUTTON);
+        const result = getByText(TEXTS.ROLL_BUTTON);
 
         await fireEvent.click(result);
         expect(props.onClick).not.toBeCalled();
