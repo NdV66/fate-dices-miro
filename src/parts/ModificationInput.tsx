@@ -7,15 +7,11 @@ type Props = Pick<InputProps, 'error' | 'statusText' | 'success' | 'id' | 'value
     showLabel?: boolean;
 };
 
-export const ModificationInput: React.FC<Props> = ({ onChange, showLabel, ...props }) => {
-    const onChangeInput = (event: React.FormEvent<HTMLInputElement>) => onChange(event.currentTarget.value);
-
-    return (
-        <Input
-            onChange={onChangeInput}
-            label={showLabel ? TEXTS.MODIFICATION : undefined}
-            placeholder={TEXTS.MODIFICATION_PLACEHOLDER}
-            {...props}
-        />
-    );
-};
+export const ModificationInput: React.FC<Props> = ({ onChange, showLabel, ...props }) => (
+    <Input
+        onChange={onChange}
+        label={showLabel ? TEXTS.MODIFICATION : undefined}
+        placeholder={TEXTS.MODIFICATION_PLACEHOLDER}
+        {...props}
+    />
+);

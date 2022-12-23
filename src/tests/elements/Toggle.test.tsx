@@ -4,7 +4,6 @@ import { Toggle, ToggleProps } from '../../elements/Toggle';
 
 const TEXT = 'I like Lord of The Rings.';
 const TEST_ID = 'toggle';
-
 const INPUT_SELECTOR = 'input[type="checkbox"]';
 
 const props: ToggleProps = {
