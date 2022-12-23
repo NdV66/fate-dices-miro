@@ -1,21 +1,21 @@
 import { fireEvent, render } from '@testing-library/react';
 import '@testing-library/jest-dom';
-import { CleanButton, CleanButtonProps } from '../../elements/CleanButton';
 import { TEXTS } from '../../const';
+import { RollButton, RollButtonProps } from '../../parts/RollButton';
 
-const props: CleanButtonProps = {
+const props: RollButtonProps = {
     onClick: jest.fn(),
     disabled: false,
 };
 
-describe('CleanButton', () => {
+describe('RollButton', () => {
     afterEach(() => {
         jest.clearAllMocks();
     });
 
     const renderElement = () => {
-        const { getByText } = render(<CleanButton {...props} />);
-        return getByText(TEXTS.CLEAN_BUTTON);
+        const { getByText } = render(<RollButton {...props} />);
+        return getByText(TEXTS.MAIN_BUTTON);
     };
 
     test('Should render (with correct text)', async () => {
@@ -31,8 +31,8 @@ describe('CleanButton', () => {
     });
 
     test('Should be disabled (onClick is not called)', async () => {
-        const { getByText } = render(<CleanButton {...props} disabled />);
-        const result = getByText(TEXTS.CLEAN_BUTTON);
+        const { getByText } = render(<RollButton {...props} disabled />);
+        const result = getByText(TEXTS.MAIN_BUTTON);
 
         await fireEvent.click(result);
         expect(props.onClick).not.toBeCalled();

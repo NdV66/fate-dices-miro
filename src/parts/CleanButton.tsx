@@ -1,5 +1,5 @@
 import { TEXTS } from '../const/texts';
-import { Button, ButtonProps } from './Button';
+import { Button, ButtonProps } from '../elements/Button';
 
 export type CleanButtonProps = Omit<ButtonProps, 'text'>;
 

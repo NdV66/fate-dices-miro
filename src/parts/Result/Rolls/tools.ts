@@ -1,6 +1,7 @@
-const WIDTH = 2;
+export const WIDTH = 2;
 export const START_COLUMN = 1;
-const MAX_COLUMN = 12;
+export const MAX_COLUMN = 12;
+
 const MAX_COLUMN_FOR_ELEMENT = MAX_COLUMN - WIDTH;
 const BETWEEN_END_AND_NEXT_START = 1;
 

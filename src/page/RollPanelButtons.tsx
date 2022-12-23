@@ -1,5 +1,5 @@
 import { RollButton } from '../elements';
-import { CleanButton } from '../elements/CleanButton';
+import { CleanButton } from '../parts/CleanButton';
 
 type Props = {
     onClickCleanButton: () => void;

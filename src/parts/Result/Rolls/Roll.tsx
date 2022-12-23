@@ -1,5 +1,5 @@
-type Props = {
+export type RollProps = {
     value: string | number;
 };
 
-export const Roll: React.FC<Props> = ({ value }) => <div className="app-roll">{value}</div>;
+export const Roll: React.FC<RollProps> = ({ value }) => <div className="app-roll">{value}</div>;
