@@ -59,7 +59,7 @@ export const RollPanel: React.FC = () => {
                 onClickButton={onClickButton}
             />
 
-            {displayRolls && <Result value={result} rolls={displayRolls} />}
+            {displayRolls && <Result summary={result} rolls={displayRolls} />}
         </>
     );
 };
