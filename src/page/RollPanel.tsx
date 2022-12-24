@@ -42,7 +42,12 @@ export const RollPanel: React.FC = () => {
 
     return (
         <>
-            <Toggle label={TEXTS.TOGGLE_MODIFICATION_LABEL} onChange={onChangeModificationToggle} checked={showInput} />
+            <Toggle
+                label={TEXTS.TOGGLE_MODIFICATION_LABEL}
+                onChange={onChangeModificationToggle}
+                checked={showInput}
+                data-testid="modificationInputToggle"
+            />
 
             {showInput && (
                 <RollPanelModificationInput
@@ -51,6 +56,7 @@ export const RollPanel: React.FC = () => {
                     errorMessage={errorMessage}
                     value={value}
                     defaultStatusText={FATE.TEXTS.MODIFICATION_STATUS}
+                    data-testid="modificationInput"
                 />
             )}
 
