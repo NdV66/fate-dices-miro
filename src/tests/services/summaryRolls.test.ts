@@ -1,4 +1,4 @@
-import { summaryRolls } from '../../services/tools';
+import { summaryRolls } from '../../services/rolls';
 
 describe('summaryRolls', () => {
     test('Should summary rolls in a correct way', () => {

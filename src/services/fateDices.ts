@@ -1,6 +1,6 @@
 import { FATE } from '../const';
 import { FateDicesType, FateDiceType } from '../types';
-import { rollDices } from './tools';
+import { rollDices } from './rolls';
 
 export const translateToFate = (roll: number): FateDiceType => {
     if (FATE.TRANSLATE_FOR_MINUS.includes(roll)) {

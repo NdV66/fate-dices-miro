@@ -1,4 +1,4 @@
-import * as tools from '../../services/tools';
+import * as tools from '../../services/rolls';
 
 describe('rollDices', () => {
     const numberRolls = 4;

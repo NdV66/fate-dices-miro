@@ -1,11 +1,11 @@
 import { Roll } from './Roll';
 import { calcEnd, calcNextStart, START_COLUMN } from './tools';
 
-type Props = {
+export type RollsProps = {
     rolls: (string | number)[];
 };
 
-export const Rolls: React.FC<Props> = ({ rolls }) => {
+export const Rolls: React.FC<RollsProps> = ({ rolls }) => {
     let start = START_COLUMN;
     let end = calcEnd(start);
 

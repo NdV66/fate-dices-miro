@@ -1,4 +1,4 @@
-import * as tools from '../../services/tools';
+import * as tools from '../../services/rolls';
 
 describe('calcSummaryRolls', () => {
     const rolls = [1, 2, 3];
@@ -26,6 +26,16 @@ describe('calcSummaryRolls', () => {
     test('Should summary rolls in a correct way with modifiers (with +)', () => {
         const modify = '+2';
         testCalc(modify);
+    });
+
+    test('Should summary rolls in a correct way with no given modifiers', () => {
+        const modify = '';
+        const expectedResult = mockSummary;
+
+        jest.spyOn(tools, 'summaryRolls').mockReturnValue(mockSummary);
+        const result = tools.calcSummaryRolls(rolls, modify);
+
+        expect(result).toEqual(expectedResult);
     });
 });
 

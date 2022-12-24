@@ -1,7 +1,7 @@
 import cn from 'classnames';
 
 export type InputProps = {
-    onChange: (event: React.FormEvent<HTMLInputElement>) => void;
+    onChange: (value: string) => void;
     id: string;
     error: boolean;
     value: string;
@@ -24,10 +24,19 @@ export const Input: React.FC<InputProps> = ({
 }) => {
     const formGroupCss = cn('form-group', { success, error });
 
+    const handleOnChange = (event: React.FormEvent<HTMLInputElement>) => onChange(event.currentTarget.value);
+
     return (
-        <div className={formGroupCss}>
+        <div className={formGroupCss} data-testid="basicInput">
             {label && <label htmlFor={id}>{label}</label>}
-            <input className="input" type="text" placeholder={placeholder} id={id} onChange={onChange} value={value} />
+            <input
+                className="input"
+                type="text"
+                placeholder={placeholder}
+                id={id}
+                onChange={handleOnChange}
+                value={value}
+            />
 
             {statusText && <div className="status-text">{statusText}</div>}
         </div>
