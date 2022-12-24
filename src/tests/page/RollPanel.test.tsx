@@ -116,6 +116,20 @@ describe('RollPanel', () => {
             fireEvent.click(toggle!);
             expect(input).not.toBeInTheDocument();
         });
+
+        test('Should clean input after click then clean button', () => {
+            const element = renderElement();
+            const container = element.container;
+            const cleanButton = element.getByText(TEXTS.CLEAN_BUTTON);
+            const toggle = container.querySelector(CHECKBOX_SELECTOR);
+            fireEvent.click(toggle!);
+
+            const input = container.querySelector(INPUT_SELECTOR);
+            fireEvent.change(input!, { target: { value: '6' } });
+            fireEvent.click(cleanButton);
+
+            expect(input).toHaveValue('');
+        });
     });
 
     describe('Result', () => {
